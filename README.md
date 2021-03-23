@@ -1,4 +1,4 @@
-password: 'foo'
+password: 'foobar'
 
 fjkoofsspoc# ![Juice Shop Logo](https://raw.githubusercontent.com/bkimminich/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png) OWASP Juice Shop
 
