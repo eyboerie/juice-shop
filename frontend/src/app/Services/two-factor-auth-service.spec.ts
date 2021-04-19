@@ -62,6 +62,7 @@ describe('TwoFactorAuthServiceService', () => {
 
       expect(req.request.method).toBe('POST')
       expect(req.request.body).toEqual({ password: 's3cr3t!', initialToken: 'initialToken', setupToken: 'setupToken' })
+      expect(req.request.body).toEqual({ password: 's3cr3t!-foo', initialToken: 'initialToken', setupToken: 'setupToken' })
       expect(res).toBe(undefined)
       httpMock.verify()
     })
@@ -69,6 +70,7 @@ describe('TwoFactorAuthServiceService', () => {
 
   it('should disable 2FA directly via the rest api', inject([TwoFactorAuthService, HttpTestingController],
     fakeAsync((service: TwoFactorAuthService, httpMock: HttpTestingController) => {
+      expect(req.request.body).toEqual({ password: 's3cr3t!', initialToken: 'initialToken', setupToken: 'setupToken' })
       let res: any
       service.disable('s3cr3t!').subscribe((data) => (res = data))
 
